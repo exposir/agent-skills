@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "organization": "Vercel Engineering",
+  "date": "2026年1月",
+  "abstract": "为人工智能智能体和 LLM 设计的 React 和 Next.js 应用程序综合性能优化指南。包含 8 个类别的 40 多条规则，按影响力从关键（消除瀑布流、减少包体积）到增量（高级模式）进行优先级排序。每条规则都包含详细的解释、比较错误与正确实现的真实世界示例，以及具体的性能指标，以指导自动重构和代码生成。",
+  "references": [
+    "https://react.dev",
+    "https://nextjs.org",
+    "https://swr.vercel.app",
+    "https://github.com/shuding/better-all",
+    "https://github.com/isaacs/node-lru-cache",
+    "https://vercel.com/blog/how-we-optimized-package-imports-in-next-js",
+    "https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast"
+  ]
+}
