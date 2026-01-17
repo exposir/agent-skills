@@ -419,7 +419,13 @@ import { Check, X, Menu } from "lucide-react";
 **示例：懒加载动画帧**
 
 ```tsx
-function AnimationPlayer({ enabled }: { enabled: boolean }) {
+function AnimationPlayer({
+  enabled,
+  setEnabled,
+}: {
+  enabled: boolean;
+  setEnabled: (v: boolean) => void;
+}) {
   const [frames, setFrames] = useState<Frame[] | null>(null);
 
   useEffect(() => {
@@ -428,7 +434,7 @@ function AnimationPlayer({ enabled }: { enabled: boolean }) {
         .then((mod) => setFrames(mod.frames))
         .catch(() => setEnabled(false));
     }
-  }, [enabled, frames]);
+  }, [enabled, frames, setEnabled]);
 
   if (!frames) return <Skeleton />;
   return <Canvas frames={frames} />;
@@ -1074,9 +1080,9 @@ useEffect(() => {
 
 ```tsx
 function Sidebar() {
-  const width = useWindowWidth()  // 持续更新
-  const isMobile = width < 768
-  return <nav className={isMobile ? 'mobile' : 'desktop'}>
+  const width = useWindowWidth(); // 持续更新
+  const isMobile = width < 768;
+  return <nav className={isMobile ? "mobile" : "desktop"} />;
 }
 ```
 
@@ -1084,8 +1090,8 @@ function Sidebar() {
 
 ```tsx
 function Sidebar() {
-  const isMobile = useMediaQuery('(max-width: 767px)')
-  return <nav className={isMobile ? 'mobile' : 'desktop'}>
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  return <nav className={isMobile ? "mobile" : "desktop"} />;
 }
 ```
 
